@@ -30,19 +30,25 @@
 
 a = 0
 b = 0
+steps = 0
+direction = ' '
 while True:
-    q = input("enter the direction")
+    q = input("enter the direction : ")
     if not q:
         break
-    direction, steps = q.split(' ')
+    try:
+        direction, steps = q.split(' ')
+        steps = int(steps)
+    except:
+        print("sorry myan")
     if direction == "left":
-        a = a-int(steps)
+        a = a-steps
     elif direction == "right":
-        a = a+int(steps)
+        a = a+steps
     elif direction == "up":
-        b = b+int(steps)
+        b = b+steps
     elif direction == "down":
-        b = b-int(steps)
+        b = b-steps
     else:
         pass
 q = (a**2 + b**2)**(1/2)
